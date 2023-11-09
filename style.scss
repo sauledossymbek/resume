@@ -1,0 +1,76 @@
+@use "var";
+@use "nav";
+@use "mixins";
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  background-color: var.$bg-color;
+}
+
+.resume {
+  @include mixins.flex(row);
+  background-color: var.$bg-color;
+
+  margin-top: 24px;
+  // display: flex;
+
+  .left-side {
+    flex: 40%;
+
+    .profile {
+      display: flex;
+
+      img {
+        width: 180px;
+        margin: auto;
+        border-radius: 100%;
+      }
+    }
+
+    .details {
+      text-align: center;
+    }
+  }
+
+  .right-side {
+    flex: 60%;
+  }
+}
+
+.section {
+  margin: 18px;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1rem;
+}
+
+.cursive {
+  font-style: italic;
+}
+
+@media screen and (max-width: 600px) {
+  .resume {
+    flex-direction: column;
+    div {
+      flex: 100%;
+    }
+  }
+}
